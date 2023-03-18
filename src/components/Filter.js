@@ -1,11 +1,11 @@
 import React from "react"
-function Filter()
+function FilterComponent(props)
 {
     return(
         <>
-            <input type ="checkbox" name="check"></input>
-            <label for = "check">hide completed</label>
+            <input type ="checkbox" name="check" onChange={props.handleFilter}></input>
+            <label htmlFor = "check">hide completed</label> 
         </>
     )
 }
-export default Filter
+export default FilterComponent
