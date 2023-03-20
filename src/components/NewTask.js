@@ -2,13 +2,15 @@ import React from "react"
 import { useState } from "react";
 function NewTask(props){
     
-    function handleAddingTasks(){
+    function handleAddingTasks(e){
+        e.preventDefault();
         props.AddToDoItem(NewTask)
         setNewTask("")
     }
     const [NewTask, setNewTask] = useState("")
     return(
         <>
+        <form onSubmit={handleAddingTasks}>
         <input
             type="text"
             name="newTask"
@@ -17,7 +19,8 @@ function NewTask(props){
             onChange={(e) => setNewTask(e.target.value)}
             
         ></input>
-        <button onClick={handleAddingTasks}>Add</button>
+        <button type="submit">Add</button>
+        </form>
         </>
     )
 }
